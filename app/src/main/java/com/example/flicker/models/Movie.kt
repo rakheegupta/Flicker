@@ -6,15 +6,19 @@ import org.json.JSONObject
 import kotlin.collections.ArrayList
 
 class Movie(movieObject: JSONObject) {
-    val posterPath : String =
-        "https://image.tmdb.org/t/p/w500${movieObject.getString("poster_path")}"
-    val originalTitle : String = movieObject.getString("original_title")
-    val overview : String = movieObject.getString("overview")
-    val backdropPath : String =
-        String.format("https://image.tmdb.org/t/p/w500%s", movieObject.getString("backdrop_path"))
-    val rating : String = movieObject.getString("vote_average")
 
-    //static function
+    val posterPath: String = "https://image.tmdb.org/t/p/w500${movieObject.getString("poster_path")}"
+
+    val originalTitle: String = movieObject.getString("original_title")
+    val overview: String = movieObject.getString("overview")
+    val backdropPath: String =
+        String.format(
+            "https://image.tmdb.org/t/p/w500%s",
+            movieObject.getString("backdrop_path")
+        )
+    val rating: String = movieObject.getString("vote_average")
+
+//static function
     companion object{
         // ArrayList<Movie>? "?" means returned item can be null
         fun fromJSONArray(array: JSONArray): ArrayList<Movie>? {

@@ -3,7 +3,9 @@ package com.example.flicker
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flicker.adapters.RecycledListAdapter
 import com.example.flicker.models.Movie
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.JsonHttpResponseHandler
@@ -28,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         val params: RequestParams = RequestParams("api_key", apiKey)
 
         val rvItems : RecyclerView = findViewById(R.id.rvMoviesList)
+        //add recycledlistadapter now
+        val recycledMovieListAdapter : RecycledListAdapter = RecycledListAdapter(this,movies)
+        rvItems.adapter= recycledMovieListAdapter
+        rvItems.layoutManager = LinearLayoutManager(this)
+
         val movieResponseHandler: JsonHttpResponseHandler = object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
                 super.onSuccess(statusCode, headers, response)
@@ -36,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 try {
                     movieJsonResults = response.getJSONArray("results")
                     Movie.fromJSONArray(movieJsonResults)?.let {movies.addAll(it)}
-                    //recycledMovieListAdapter.notifyDataSetChanged()
+                    recycledMovieListAdapter.notifyDataSetChanged()
                     println(movies.toString())
                 } catch (e: JSONException) {
                     e.printStackTrace()
