@@ -1,8 +1,12 @@
 package com.example.flicker
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flicker.adapters.RecycledListAdapter
@@ -71,6 +75,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
         client.get(urlTrending, params, movieResponseHandler)
-
     }
 }

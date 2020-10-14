@@ -7,10 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.flicker.R
+import com.example.flicker.models.Movie
 
 // Provide a direct reference to each of the views within a data item
 // Used to cache the views within the item layout for fast access
-class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MovieViewHolder2(itemView: View) : RecyclerView.ViewHolder(itemView){
 
     // Your holder should contain a member variable
     // for any view that will be set as you render a row

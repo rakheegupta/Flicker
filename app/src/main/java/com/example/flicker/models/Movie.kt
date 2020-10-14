@@ -3,9 +3,10 @@ package com.example.flicker.models
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.Serializable
 import kotlin.collections.ArrayList
 
-class Movie(movieObject: JSONObject) {
+class Movie(movieObject: JSONObject) :Serializable{
 
     val posterPath: String = "https://image.tmdb.org/t/p/w500${movieObject.getString("poster_path")}"
 
@@ -16,7 +17,8 @@ class Movie(movieObject: JSONObject) {
             "https://image.tmdb.org/t/p/w500%s",
             movieObject.getString("backdrop_path")
         )
-    val rating: String = movieObject.getString("vote_average")
+    val rating: Double = movieObject.getDouble("vote_average")
+    val releaseDate = movieObject.getString("release_date")
 
 //static function
     companion object{
