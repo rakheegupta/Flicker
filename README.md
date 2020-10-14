@@ -39,7 +39,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/rakheegupta/FlickrDemo/blob/master/flicker.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' /><img src='https://github.com/rakheegupta/FlickrDemo/blob/master/flicker_land.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
+<video src='https://github.com/rakheegupta/Flicker/blob/main/Screen_Recording_20201014-112101_Flicker.mp4' title='Video Walkthrough' width='300' alt='Video Walkthrough' /><img src='https://github.com/rakheegupta/FlickrDemo/blob/master/flicker_land.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
